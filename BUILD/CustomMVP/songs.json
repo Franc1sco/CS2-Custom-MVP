@@ -1,0 +1,10 @@
+[
+    {
+        "Name": "Song 1",
+        "Dir": "/sounds/category/example2.mp3"
+    },
+    {
+        "Name": "Song 2",
+        "Dir": "/sounds/category/example2.mp3"
+    },
+]
