@@ -13,4 +13,5 @@ Drag and drop from the BUILD section to game/csgo/addons/counterstrikesharp/plug
 
 ### Configuration
 
-Configure the file songs.json from the BUILD with your songs and upload the songs with MultiAddonManager.
+* Configure the file songs.json from the BUILD with your songs and upload the songs with MultiAddonManager.
+* Configure the file CustomMVP.json generated on addons/counterstrikesharp/configs/plugins/CustomMVP
