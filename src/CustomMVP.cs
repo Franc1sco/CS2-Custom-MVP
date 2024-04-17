@@ -125,8 +125,6 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
             {
                 return HookResult.Continue;
             }
-            var nomusic = @event.Nomusic;
-            nomusic = 1;
             var emitsound = gSelectedSong[(int)player.Index];
             if (emitsound == null || emitsound == "none")
             {
@@ -144,7 +142,8 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
                     }
                 });
             });
-            return HookResult.Changed;
+            info.DontBroadcast = true;
+            return HookResult.Continue;
         }, HookMode.Pre);
     }
 

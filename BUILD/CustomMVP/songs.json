@@ -1,10 +1,10 @@
 [
     {
-        "Name": "Song 1",
-        "Dir": "/sounds/category/example2.mp3"
+        "Name": "2scratch - Shotta",
+        "Dir": "roundend/2scratch-shotta"
     },
     {
-        "Name": "Song 2",
-        "Dir": "/sounds/category/example2.mp3"
-    },
+        "Name": "Apashe - Behind My Eyes (ft. LIA)",
+        "Dir": "roundend/apashe-behindmyeyes"
+    }
 ]
