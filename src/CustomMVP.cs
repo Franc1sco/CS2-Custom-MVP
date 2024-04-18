@@ -40,7 +40,7 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
 {
     public override string ModuleName => "Custom MVP Sound";
     public override string ModuleAuthor => "Franc1sco Franug";
-    public override string ModuleVersion => "0.0.2";
+    public override string ModuleVersion => "0.0.3";
     public ConfigGen Config { get; set; } = null!;
     public void OnConfigParsed(ConfigGen config) { Config = config; }
     internal static Dictionary<int, string?> gSelectedSong = new Dictionary<int, string?>();
@@ -170,7 +170,7 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
         return canciones;
     }
 
-    [ConsoleCommand("css_mvp", "Select MVP songs.")]
+    [ConsoleCommand("css_xmvp", "Select MVP songs.")]
     [CommandHelper(minArgs: 0, usage: "", whoCanExecute: CommandUsage.CLIENT_ONLY)]
     public void setupMainMenu(CCSPlayerController? player, CommandInfo info)
     {
