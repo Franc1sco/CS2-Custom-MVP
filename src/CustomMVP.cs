@@ -40,7 +40,7 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
 {
     public override string ModuleName => "Custom MVP Sound";
     public override string ModuleAuthor => "Franc1sco Franug";
-    public override string ModuleVersion => "0.0.3";
+    public override string ModuleVersion => "0.0.4";
     public ConfigGen Config { get; set; } = null!;
     public void OnConfigParsed(ConfigGen config) { Config = config; }
     internal static Dictionary<int, string?> gSelectedSong = new Dictionary<int, string?>();
@@ -378,7 +378,7 @@ public class MySQLStorage
                 await connLocal!.OpenAsync();
                 var sql = $@"SELECT sound FROM {table} WHERE steamid = @SteamID;";
                 var command = new SqliteCommand(sql, connLocal);
-                command.Parameters.AddWithValue("@steamid", steamID);
+                command.Parameters.AddWithValue("@SteamID", steamID);
                 var reader = await command.ExecuteReaderAsync();
                 while (await reader.ReadAsync())
                 {
@@ -406,7 +406,7 @@ public class MySQLStorage
                     await conn.OpenAsync();
                     var sql = $@"SELECT sound FROM {table} WHERE steamid = @SteamID;";
                     var command = new MySqlCommand(sql, conn);
-                    command.Parameters.AddWithValue("@steamid", steamID);
+                    command.Parameters.AddWithValue("@SteamID", steamID);
                     var reader = await command.ExecuteReaderAsync();
                     while (await reader.ReadAsync())
                     {
