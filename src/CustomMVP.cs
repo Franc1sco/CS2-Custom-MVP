@@ -40,7 +40,7 @@ public class CustomMVP : BasePlugin, IPluginConfig<ConfigGen>
 {
     public override string ModuleName => "Custom MVP Sound";
     public override string ModuleAuthor => "Franc1sco Franug";
-    public override string ModuleVersion => "0.0.5";
+    public override string ModuleVersion => "0.0.6";
     public ConfigGen Config { get; set; } = null!;
     public void OnConfigParsed(ConfigGen config) { Config = config; }
     internal static Dictionary<int, string?> gSelectedSong = new Dictionary<int, string?>();
@@ -332,7 +332,7 @@ public class MySQLStorage
         ";
                 await conn.ExecuteAsync(sql, new { SteamID });
             }
-            conn.Close();
+            conn.CloseAsync();
         }
     }
     public async Task SetSound(ulong steamID, string value)
@@ -361,6 +361,10 @@ public class MySQLStorage
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in SetSound: {ex.Message}");
+            }
+            finally
+            {
+                await conn?.CloseAsync();
             }
         }
 
@@ -414,7 +418,7 @@ public class MySQLStorage
             }
             finally
             {
-                await connLocal?.CloseAsync();
+                await conn?.CloseAsync();
             }
         }
     }
